@@ -12,7 +12,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 
 public class WebService {
-
+	//first change
 	private static String URL = "http://ax2012r2a:8101/DynamicsAx/Services/FLCTimeSheetServiceGroup";
 	private static String NAMESPACE = "http://tempuri.org";		
 	private static String SOAP_ACTION = "http://tempuri.org";
