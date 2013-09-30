@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
 				AsyncCallWS task = new AsyncCallWS();
 				//Test BR...test..more test 
 				// is this working?
+				//yes
 				task.execute();
 			}
 			
