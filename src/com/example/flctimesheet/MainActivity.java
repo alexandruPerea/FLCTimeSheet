@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				AsyncCallWS task = new AsyncCallWS();
-				//Test BR
+				//Test BR...test
 				task.execute();
 			}
 			
