@@ -9,6 +9,10 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import android.widget.EditText;
+
+import com.example.billmanager_v0_1.R;
+
 
 
 public class WebService {
@@ -54,5 +58,34 @@ public class WebService {
 			e.printStackTrace();
 			resTxt = "Error occured";
 		}
+	}
+	
+	public class BR_WebCall()
+	{
+		final String NAMESPACE = "http://www.webserviceX.NET";
+	    final String URL = "http://www.webservicex.net/periodictable.asmx?WSDL";
+	    final String SOAP_ACTION = "http://www.webserviceX.NET/GetAtomicNumber";
+	    final String METHOD_NAME = "GetAtomicNumber";
+	    
+	    //To be amended
+	    public static void invoke()
+	    {
+		    SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME); 
+	        
+	        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	        envelope.setOutputSoapObject(request);
+	        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+	         
+	        try {
+	            androidHttpTransport.call(SOAP_ACTION, envelope);
+	            SoapPrimitive response = (SoapPrimitive)envelope.getResponse();
+	            
+	            EditText tv = (EditText) findViewById(R.id.editText1);
+	            tv.setText(response.toString());
+	
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
 	}
 }
